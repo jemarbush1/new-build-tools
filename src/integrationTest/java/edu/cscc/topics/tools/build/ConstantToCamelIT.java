@@ -34,11 +34,12 @@ public class ConstantToCamelIT {
 
         StringBuilder stringBuilder = new StringBuilder();
         logContainerCmd.exec(new LogContainerResultCallback() {
-                @Override
-                public void onNext(Frame item) {
-                    stringBuilder.append(new String(item.getPayload()));
-                }
-            }).awaitCompletion();
+            @Override
+            public void onNext(Frame item) {
+
+                stringBuilder.append(new String(item.getPayload()));
+            }
+        }).awaitCompletion();
 
         dockerClient.removeContainerCmd(container.getId()).exec();
 
@@ -67,6 +68,7 @@ public class ConstantToCamelIT {
         logContainerCmd.exec(new LogContainerResultCallback() {
             @Override
             public void onNext(Frame item) {
+
                 stringBuilder.append(new String(item.getPayload()));
             }
         }).awaitCompletion();
