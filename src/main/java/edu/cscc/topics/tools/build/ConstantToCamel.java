@@ -8,6 +8,7 @@ public class ConstantToCamel {
     }
 
     public static void main(String[] args) {
+
         System.out.println(convert(args[0]));
     }
 
